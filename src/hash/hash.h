@@ -20,10 +20,6 @@ public:
     bool search(const std::string& word)const;
     std::vector<std::string> prefixSearch(const std::string& prefix)const;
 
-
-
-
-
 };
 
 
