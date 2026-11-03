@@ -7,8 +7,9 @@ HashTable::HashTable() : buckets(16), WordCount(0) {
 }
 
 size_t HashTable::hashFunction (const string& word) const {
-    //finsih
-    return 0;
+    hash<string> hasher;
+    size_t hash_value = hasher (word);
+    return hash_value;
 }
 
 
