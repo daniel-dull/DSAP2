@@ -12,7 +12,7 @@ private:
     std::size_t WordCount;
 
     std::size_t hashFunction(const std::string& word)const;
-    void rehash();
+    void reHash();
 
 public:
     HashTable();

@@ -27,16 +27,44 @@ bool HashTable::search (const string& word) const {
 }
 
 void HashTable::insert(const string& word) {
-    //finish
-    return 0;
+    if (search(word)) {
+        return;
+    }
+    size_t index = hashFunction(word);
+    buckets[index].push_back(word);
+    WordCount++;
+
+    float loadFactor = (float)WordCount / buckets.size();
+
+    if (loadFactor > 0.75) {
+        reHash();
+    }
 }
 
 
 void HashTable::reHash() {
-    return 0;
+    vector<vector<string>> oldBuckets;
+    oldBuckets.swap(buckets);
+
+    buckets.resize(oldBuckets.size()*2);
+
+    for (const auto& bucket : oldBuckets) {
+        for (const string& word : bucket) {
+            size_t index = hashFunction(word);
+            buckets[index].push_back(word);
+        }
+    }
 }
 
 vector<string> HashTable::prefixSearch(const string& prefix) const {
-    //finish
-    return 0;
+    vector<string> matches;
+
+    for (const auto& bucket : buckets) {
+        for (const string& word : bucket) {
+            if (word.compare(0, prefix.size(), prefix) == 0) {
+                matches.push_back(word);
+            }
+        }
+    }
+    return matches;
 }
