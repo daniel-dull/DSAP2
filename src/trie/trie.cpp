@@ -99,13 +99,109 @@ bool Trie::deleteWord(string input){
 	return false;
 }
 
+// ###########################################################################
+//                               PRINT ALL WORDS
+// ###########################################################################
 
+// allegedly prints all words in the trie. 
+// idea here is that each node appends a letter to a string, printing the
+// string if the current node is marked as a word, before going to each of 
+// the node's children and doing the same, then removing the letter it added. 
+void Trie::printAllWordsHelp(Node* root, string &output){
+	// if the node's letter is not a null terminator
+	// (should only apply to the root), then append it to the output string.
+	if(root->letter != '\0')
+		ouput += root->letter;
+	// if the node is a word, print everything in output. 
+	if(root->isWord)
+		cout << output << endl;
+	// if there are children, recursively call this function on all children. 
+	if(!root->next.empty()){
+		for(auto i : next)
+			printAllWordsHelp(i,output);
+	}
+	// remove the last letter. 
+	output.pop_back();
+	return;
+}
 
+// front end. just called the helper pretty much but loads the 
+// string to be printed. 
+void Trie::printAllWords(){
+	string output = "";
+	printAllWordsHelp(this->root,output);
+}
 
+// ###########################################################################
+//                               PRINT LEVEL ORDER
+// ###########################################################################
 
+// does level order stuff, returns a vector of vectors, should be
+// the tree's keys in level order. level order not guaranteed to be sorted.
+// i will not elaborate on how this works.
+vector<vector<char>> Trie::levelOrderHelp(Node* root){
+	if(!root)
+		return {};
+	vector<vector<char>> result;
+	queue<Node*> q;
+	q.push(root);
+	int level = 0;
+	
+	while(!q.empty()){
+		int count = q.siz();
+		result.push_back({});
+		
+		for(int i = 0;i<count;i++){
+			result[level].push_back(q.front()->letter);
+			for(auto i : q.front()->next)
+				q.push(i);
+			q.pop();
+		}
+		level++;
+	}
+}
 
+void Trie::printLevelOrder(){
+	vector<char> result = levelOrderHelp(this->root);
+	int level = 0;
+	for(auto i : result){
+		cout << "LEVEL: " << level << "\n\t";
+		for(auto j : i){
+			if(j != '\0')
+				cout << j;
+		}
+	}
+}
+	
+// ###########################################################################
+//                               FIND NEAREST WORDS
+// ###########################################################################
 
+// does a breadth first search to find the nearest n words.
+// n default == 5, can be adjusted. 
+vector<string> Trie::FindNearestHelp(Node* root,string &input, int maxReturn){
+	queue<Node*> q;
+	q.push(root);
+	vector<string> ret;
+	input.pop_back(); // input is popped because this function starts with the node who matches the last letter of the input.
+	while(!q.empty()){ 
+		input += q.front()->letter;
+		if(q.front()->isWord())
+			ret.push_back(input);
+		if(ret.size() == maxReturn)
+			return ret;
+		for(auto i : q.front()->next)
+			q.push(i);
+		q.pop();
+	} 
+}
 
+vector<string> Trie::FindNearest(string input){
+	input = validate(input);
+	if(input.empty())
+		return {};
+	return FindNearestHelp(search(input),input,this->wordsToSuggest);
+}
 
 
 
