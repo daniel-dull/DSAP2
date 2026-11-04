@@ -12,13 +12,16 @@ class Trie{
 	// private member functions
 	void insertHelp(string word, Node* root);
 	Node* searchHelp(string input);
-	void printAllWordsHelp(Node* root, string &output);
+	void DFSOrderHelp(Node* root, string &output,vector<string> &ret);
 	vector<char> levelOrderHelp(Node* root);
+	vector<string> FindNearestHelp(Node* root,string &input, int maxReturn);
 public:
 	// public member funcitons
 	bool insert(string word);
 	Node* search(string input);
 	bool deleteWord(string input);
-	void printAllWords();
-	void printLevelOrder();
+	vector<string> getDFSOrder();
+	void getLevelOrder();
+	vector<string> FindNearest(string input);
+	void setMaxReturn(int input);
 };
