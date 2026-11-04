@@ -1,3 +1,9 @@
+#include <string>
+#include <vector>
+# ifndef TRIE_H
+# define TRIE_H
+
+
 struct Node{
 	char letter = '\0';
 	vector<Node*> next;
@@ -7,6 +13,8 @@ struct Node{
 };
 
 class Trie{
+	//Node* root = nullptr; idk if this is what it should be?
+
 	Node* root = new Node;
 	int wordsToSuggest = 5;
 	// private member functions
@@ -25,3 +33,6 @@ public:
 	vector<string> FindNearest(string input);
 	void setMaxReturn(int input);
 };
+
+
+#endif
