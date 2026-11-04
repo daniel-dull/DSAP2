@@ -1,5 +1,4 @@
 #include "hash.h"
-
 using namespace std;
 
 HashTable::HashTable() : buckets(16), WordCount(0) {

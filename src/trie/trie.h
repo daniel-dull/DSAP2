@@ -1,5 +1,5 @@
 struct Node{
-	char letter = '';
+	char letter = ''; // i think you need a place holder here?
 	vector<Node*> next;
 	bool isWord = false;
 	Node(char letra): letter(letra) {}
