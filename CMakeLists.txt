@@ -7,4 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(hash_table
         src/hash/hash.cpp
         src/hash/hash.h
+        src/trie/trie.cpp
+        src/trie/trie.h
+        src/hash/hash_tests.cpp
 )

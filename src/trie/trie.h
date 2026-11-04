@@ -10,8 +10,5 @@ class Trie{
 public:
 	bool insert(string word);
 	string search(string input);
-	
-	
-	
 
 };
