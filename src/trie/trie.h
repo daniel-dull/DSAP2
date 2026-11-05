@@ -13,8 +13,6 @@ struct Node{
 };
 
 class Trie{
-	//Node* root = nullptr; idk if this is what it should be?
-
 	Node* root = new Node;
 	int wordsToSuggest = 5;
 	// private member functions
