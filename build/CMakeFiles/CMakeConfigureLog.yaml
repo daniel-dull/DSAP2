@@ -567,3 +567,273 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/catch2-src/CMake/CatchMiscFunctions.cmake:12 (check_cxx_compiler_flag)"
+      - "build/_deps/catch2-src/CMake/CatchMiscFunctions.cmake:118 (add_cxx_flag_if_supported_to_targets)"
+      - "build/_deps/catch2-src/src/CMakeLists.txt:351 (add_build_reproducibility_settings)"
+    checks:
+      - "Performing Test HAVE_FLAG__ffile_prefix_map__home_comicalmayhem_Documents_PROJECTS_DSAP2_build__deps_catch2_src__"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/CMake"
+    buildResult:
+      variable: "HAVE_FLAG__ffile_prefix_map__home_comicalmayhem_Documents_PROJECTS_DSAP2_build__deps_catch2_src__"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_875fa/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_875fa.dir/build.make CMakeFiles/cmTC_875fa.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG'
+        Building CXX object CMakeFiles/cmTC_875fa.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_FLAG__ffile_prefix_map__home_comicalmayhem_Documents_PROJECTS_DSAP2_build__deps_catch2_src__  -std=gnu++17   -ffile-prefix-map=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/= -o CMakeFiles/cmTC_875fa.dir/src.cxx.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG/src.cxx
+        Linking CXX executable cmTC_875fa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_875fa.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_875fa.dir/src.cxx.o -o cmTC_875fa 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NDZZYG'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:682 (check_library_exists)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt:294 (sfml_find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ac064/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ac064.dir/build.make CMakeFiles/cmTC_ac064.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp'
+        Building C object CMakeFiles/cmTC_ac064.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_ac064.dir/CheckFunctionExists.c.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp/CheckFunctionExists.c
+        Linking C executable cmTC_ac064
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac064.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_ac064.dir/CheckFunctionExists.c.o -o cmTC_ac064  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tJzbNp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:697 (check_function_exists)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt:294 (sfml_find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a1c1c/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a1c1c.dir/build.make CMakeFiles/cmTC_a1c1c.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV'
+        Building C object CMakeFiles/cmTC_a1c1c.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_a1c1c.dir/CheckFunctionExists.c.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV/CheckFunctionExists.c
+        Linking C executable cmTC_a1c1c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1c1c.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_a1c1c.dir/CheckFunctionExists.c.o -o cmTC_a1c1c 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-tnoWbV'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:711 (check_function_exists)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt:294 (sfml_find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_76066/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_76066.dir/build.make CMakeFiles/cmTC_76066.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi'
+        Building C object CMakeFiles/cmTC_76066.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_76066.dir/CheckFunctionExists.c.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi/CheckFunctionExists.c
+        Linking C executable cmTC_76066
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76066.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_76066.dir/CheckFunctionExists.c.o -o cmTC_76066 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-vK2kvi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:720 (check_function_exists)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt:294 (sfml_find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2d906/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2d906.dir/build.make CMakeFiles/cmTC_2d906.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf'
+        Building C object CMakeFiles/cmTC_2d906.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_2d906.dir/CheckFunctionExists.c.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf/CheckFunctionExists.c
+        Linking C executable cmTC_2d906
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d906.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_2d906.dir/CheckFunctionExists.c.o -o cmTC_2d906 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-NO3oEf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:729 (check_function_exists)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt:294 (sfml_find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ac377/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ac377.dir/build.make CMakeFiles/cmTC_ac377.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC'
+        Building C object CMakeFiles/cmTC_ac377.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_ac377.dir/CheckFunctionExists.c.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC/CheckFunctionExists.c
+        Linking C executable cmTC_ac377
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac377.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_ac377.dir/CheckFunctionExists.c.o -o cmTC_ac377 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-n2jvIC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:739 (check_library_exists)"
+      - "build/_deps/sfml-src/cmake/Macros.cmake:386 (find_package)"
+      - "build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt:294 (sfml_find_package)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD"
+      binary: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-src/extras;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/;/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/Modules/"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cab66/fast
+        gmake[1]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cab66.dir/build.make CMakeFiles/cmTC_cab66.dir/build
+        gmake[2]: Entering directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD'
+        Building C object CMakeFiles/cmTC_cab66.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_cab66.dir/CheckFunctionExists.c.o -c /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD/CheckFunctionExists.c
+        Linking C executable cmTC_cab66
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cab66.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_cab66.dir/CheckFunctionExists.c.o -o cmTC_cab66  -lICE 
+        gmake[2]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD'
+        gmake[1]: Leaving directory '/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/CMakeScratch/TryCompile-6hDMRD'
+        
+      exitCode: 0
+...

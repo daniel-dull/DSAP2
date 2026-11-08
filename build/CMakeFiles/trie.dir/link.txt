@@ -1,2 +1,1 @@
-/usr/bin/ar qc libtrie.a CMakeFiles/trie.dir/src/trie/trie.cpp.o
-/usr/bin/ranlib libtrie.a
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libtrie.so -o libtrie.so CMakeFiles/trie.dir/src/trie/trie.cpp.o 

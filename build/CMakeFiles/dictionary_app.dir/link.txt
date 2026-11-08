@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/dictionary_app.dir/src/main.cpp.o -o dictionary_app  libhash_table.a libtrie.a 
+/usr/bin/c++ CMakeFiles/dictionary_app.dir/src/main.cpp.o -o dictionary_app  -Wl,-rpath,/home/comicalmayhem/Documents/PROJECTS/DSAP2/build libhash_table.so libtrie.so 

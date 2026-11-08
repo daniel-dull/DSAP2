@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/comicalmayhem/Documents/PROJECTS/DSAP2/src/trie/trie.cpp" "CMakeFiles/trie_tests.dir/src/trie/trie.cpp.o" "gcc" "CMakeFiles/trie_tests.dir/src/trie/trie.cpp.o.d"
   "/home/comicalmayhem/Documents/PROJECTS/DSAP2/src/trie/trietests.cpp" "CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o" "gcc" "CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o.d"
   )
 

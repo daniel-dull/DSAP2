@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o -o trie_tests  libtrie.a /usr/local/lib/libCatch2Main.a /usr/local/lib/libCatch2.a 
+/usr/bin/c++ CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o CMakeFiles/trie_tests.dir/src/trie/trie.cpp.o -o trie_tests  -Wl,-rpath,/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/_deps/catch2-build/src _deps/catch2-build/src/libCatch2Main.so.3.5.0 _deps/catch2-build/src/libCatch2.so.3.5.0 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/trie.dir/src/trie/trie.cpp.o"
   "CMakeFiles/trie.dir/src/trie/trie.cpp.o.d"
-  "libtrie.a"
   "libtrie.pdb"
+  "libtrie.so"
 )
 
 # Per-language clean rules from dependency scanning.

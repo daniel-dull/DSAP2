@@ -49,6 +49,16 @@ add_executable(DSAP2_UI
         src/trie/trie.cpp
 )
 
+add_library(hash_table
+        src/hash/hash.cpp
+        src/hash/hash.h
+)
+
+add_library(trie
+        src/trie/trie.cpp
+        src/trie/trie.h
+)
+
 add_executable(dictionary_app
         src/main.cpp
 )

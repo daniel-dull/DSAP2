@@ -92,8 +92,8 @@ dictionary_app_EXTERNAL_OBJECTS =
 
 dictionary_app: CMakeFiles/dictionary_app.dir/src/main.cpp.o
 dictionary_app: CMakeFiles/dictionary_app.dir/build.make
-dictionary_app: libhash_table.a
-dictionary_app: libtrie.a
+dictionary_app: libhash_table.so
+dictionary_app: libtrie.so
 dictionary_app: CMakeFiles/dictionary_app.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable dictionary_app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dictionary_app.dir/link.txt --verbose=$(VERBOSE)
