@@ -41,3 +41,6 @@ enable_testing()
 list(APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/extras")
 include(Catch)
 catch_discover_tests(hash_tests)
+
+add_executable(dictionary_app src/main.cpp)
+target_link_libraries(dictionary_app PRIVATE hash_table trie)
