@@ -6,14 +6,14 @@
 
 using namespace std;
 
-Test_Case ("Empty table returns no matches") {
+TEST_CASE("Empty table returns no matches") {
     HashTable table;
 
     REQUIRE_FALSE(table.search("avaricious"));
     REQUIRE(table.prefixSearch("avar").empty());
 }
 
-Test_Case("Inserted words can be found") {
+TEST_CASE("Inserted words can be found") {
     HashTable table;
     table.insert("apple");
     table.insert("banana");
@@ -24,16 +24,15 @@ Test_Case("Inserted words can be found") {
     REQUIRE_FALSE(table.search("app"));
 }
 
-Test_Case("Duplicate words stored only one time") {
+TEST_CASE("Duplicate words stored only one time") {
     HashTable table;
     table.insert("corner");
     table.insert("corner");
 
     vector<string> expected = {"corner"};
-    REQUIRE(table.search prefixSearch("cor") == expected);
-}
+REQUIRE(table.prefixSearch("cor") == expected);}
 
-Test_Case("Colliding words remain searchable") {
+TEST_CASE("Colliding words remain searchable") {
     HashTable table;
 
     table.insert("a");
@@ -58,3 +57,46 @@ TEST_CASE("Words remain searchable after resizing") {
     REQUIRE(table.prefixSearch("word").size() == 100);
 }
 
+TEST_CASE("Prefix search returns exactly the matching words") {
+    HashTable table;
+    table.insert("cat");
+    table.insert("catch");
+    table.insert("caterpillar");
+    table.insert("dog");
+
+    vector<string> matches = table.prefixSearch("cat");
+    sort(matches.begin(), matches.end());
+
+    vector<string> expected = {"cat", "catch", "caterpillar"};
+
+    REQUIRE(matches == expected);
+    REQUIRE(table.prefixSearch("xyz").empty());
+    REQUIRE(table.prefixSearch("caterpillars").empty());
+}
+
+TEST_CASE("Empty prefix returns all stored words") {
+    HashTable table;
+    table.insert("corner");
+    table.insert("dog");
+
+    vector<string> matches = table.prefixSearch("");
+    sort(matches.begin(), matches.end());
+
+    vector<string> expected = {"corner", "dog"};
+
+    REQUIRE(matches == expected);
+}
+
+TEST_CASE("Search and prefix search are case-sensitive") {
+    HashTable table;
+    table.insert("Cat");
+
+    REQUIRE(table.search("Cat"));
+    REQUIRE_FALSE(table.search("cat"));
+    REQUIRE_FALSE(table.search("CAT"));
+
+    vector<string> expected = {"Cat"};
+
+    REQUIRE(table.prefixSearch("Ca") == expected);
+    REQUIRE(table.prefixSearch("ca").empty());
+}
