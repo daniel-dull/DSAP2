@@ -1,0 +1,12 @@
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/hash_table.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/trie.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/hash_tests.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/dictionary_app.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/edit_cache.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles/rebuild_cache.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/CMakeFiles/edit_cache.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/CMakeFiles/rebuild_cache.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/src/CMakeFiles/Catch2.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/src/CMakeFiles/Catch2WithMain.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/src/CMakeFiles/edit_cache.dir
+/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/src/CMakeFiles/rebuild_cache.dir

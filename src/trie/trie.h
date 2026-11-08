@@ -18,17 +18,17 @@ class Trie{
 	int wordsToSuggest = 5;
 	// private member functions
 	void insertHelp(string word, Node* root);
-	Node* searchHelp(string input);
+	Node* searchHelp(string input, Node* root);
 	void DFSOrderHelp(Node* root, string &output,vector<string> &ret);
-	vector<char> levelOrderHelp(Node* root);
-	vector<string> FindNearestHelp(Node* root,string &input, int maxReturn);
+	vector<vector<char>> levelOrderHelp(Node* root);
+	vector<string> FindNearestHelp(Node* root,string input, int maxReturn);
 public:
 	// public member funcitons
 	bool insert(string word);
 	Node* search(string input);
 	bool deleteWord(string input);
 	vector<string> getDFSOrder();
-	void getLevelOrder();
+	vector<vector<char>> getLevelOrder();
 	vector<string> FindNearest(string input);
 	void setMaxReturn(int input);
 };

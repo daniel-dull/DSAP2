@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/dictionary_app.dir/src/main.cpp.o -o dictionary_app  libhash_table.a libtrie.a 
