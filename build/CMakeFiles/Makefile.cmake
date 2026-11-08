@@ -127,12 +127,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/hash_tests.dir/DependInfo.cmake"
-  "CMakeFiles/trie_tests.dir/DependInfo.cmake"
   "CMakeFiles/DSAP2_UI.dir/DependInfo.cmake"
   "CMakeFiles/hash_table.dir/DependInfo.cmake"
   "CMakeFiles/trie.dir/DependInfo.cmake"
   "CMakeFiles/dictionary_app.dir/DependInfo.cmake"
+  "CMakeFiles/hash_tests.dir/DependInfo.cmake"
+  "CMakeFiles/trie_tests.dir/DependInfo.cmake"
   "_deps/catch2-build/src/CMakeFiles/Catch2.dir/DependInfo.cmake"
   "_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/DependInfo.cmake"
   "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/DependInfo.cmake"

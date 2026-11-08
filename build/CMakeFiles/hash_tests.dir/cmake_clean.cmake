@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hash_tests.dir/src/hash/hash.cpp.o"
-  "CMakeFiles/hash_tests.dir/src/hash/hash.cpp.o.d"
   "CMakeFiles/hash_tests.dir/src/hash/hash_tests.cpp.o"
   "CMakeFiles/hash_tests.dir/src/hash/hash_tests.cpp.o.d"
   "hash_tests"

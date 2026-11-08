@@ -63,12 +63,12 @@ CMAKE_BINARY_DIR = /home/comicalmayhem/Documents/PROJECTS/DSAP2/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/hash_tests.dir/all
-all: CMakeFiles/trie_tests.dir/all
 all: CMakeFiles/DSAP2_UI.dir/all
 all: CMakeFiles/hash_table.dir/all
 all: CMakeFiles/trie.dir/all
 all: CMakeFiles/dictionary_app.dir/all
+all: CMakeFiles/hash_tests.dir/all
+all: CMakeFiles/trie_tests.dir/all
 all: _deps/catch2-build/all
 all: _deps/sfml-build/all
 all: _deps/imgui-sfml-build/all
@@ -81,12 +81,12 @@ preinstall: _deps/imgui-sfml-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/hash_tests.dir/clean
-clean: CMakeFiles/trie_tests.dir/clean
 clean: CMakeFiles/DSAP2_UI.dir/clean
 clean: CMakeFiles/hash_table.dir/clean
 clean: CMakeFiles/trie.dir/clean
 clean: CMakeFiles/dictionary_app.dir/clean
+clean: CMakeFiles/hash_tests.dir/clean
+clean: CMakeFiles/trie_tests.dir/clean
 clean: _deps/catch2-build/clean
 clean: _deps/sfml-build/clean
 clean: _deps/imgui-sfml-build/clean
@@ -257,60 +257,6 @@ _deps/sfml-build/src/SFML/Window/clean: _deps/sfml-build/src/SFML/Window/CMakeFi
 .PHONY : _deps/sfml-build/src/SFML/Window/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/hash_tests.dir
-
-# All Build rule for target.
-CMakeFiles/hash_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
-CMakeFiles/hash_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=51,52 "Built target hash_tests"
-.PHONY : CMakeFiles/hash_tests.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/hash_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 46
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hash_tests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
-.PHONY : CMakeFiles/hash_tests.dir/rule
-
-# Convenience name for target.
-hash_tests: CMakeFiles/hash_tests.dir/rule
-.PHONY : hash_tests
-
-# clean rule for target.
-CMakeFiles/hash_tests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/clean
-.PHONY : CMakeFiles/hash_tests.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/trie_tests.dir
-
-# All Build rule for target.
-CMakeFiles/trie_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
-CMakeFiles/trie_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=99,100 "Built target trie_tests"
-.PHONY : CMakeFiles/trie_tests.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/trie_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 46
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/trie_tests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
-.PHONY : CMakeFiles/trie_tests.dir/rule
-
-# Convenience name for target.
-trie_tests: CMakeFiles/trie_tests.dir/rule
-.PHONY : trie_tests
-
-# clean rule for target.
-CMakeFiles/trie_tests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/clean
-.PHONY : CMakeFiles/trie_tests.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/DSAP2_UI.dir
 
 # All Build rule for target.
@@ -320,7 +266,7 @@ CMakeFiles/DSAP2_UI.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-
 CMakeFiles/DSAP2_UI.dir/all: _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=45,46 "Built target DSAP2_UI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=46 "Built target DSAP2_UI"
 .PHONY : CMakeFiles/DSAP2_UI.dir/all
 
 # Build rule for subdir invocation for target.
@@ -346,12 +292,12 @@ CMakeFiles/DSAP2_UI.dir/clean:
 CMakeFiles/hash_table.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table.dir/build.make CMakeFiles/hash_table.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table.dir/build.make CMakeFiles/hash_table.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num= "Built target hash_table"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=51 "Built target hash_table"
 .PHONY : CMakeFiles/hash_table.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hash_table.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hash_table.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : CMakeFiles/hash_table.dir/rule
@@ -372,7 +318,7 @@ CMakeFiles/hash_table.dir/clean:
 CMakeFiles/trie.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie.dir/build.make CMakeFiles/trie.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie.dir/build.make CMakeFiles/trie.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=98 "Built target trie"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=99 "Built target trie"
 .PHONY : CMakeFiles/trie.dir/all
 
 # Build rule for subdir invocation for target.
@@ -404,7 +350,7 @@ CMakeFiles/dictionary_app.dir/all: CMakeFiles/trie.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dictionary_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dictionary_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : CMakeFiles/dictionary_app.dir/rule
@@ -419,18 +365,74 @@ CMakeFiles/dictionary_app.dir/clean:
 .PHONY : CMakeFiles/dictionary_app.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/hash_tests.dir
+
+# All Build rule for target.
+CMakeFiles/hash_tests.dir/all: CMakeFiles/hash_table.dir/all
+CMakeFiles/hash_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
+CMakeFiles/hash_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=52 "Built target hash_tests"
+.PHONY : CMakeFiles/hash_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/hash_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 47
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hash_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
+.PHONY : CMakeFiles/hash_tests.dir/rule
+
+# Convenience name for target.
+hash_tests: CMakeFiles/hash_tests.dir/rule
+.PHONY : hash_tests
+
+# clean rule for target.
+CMakeFiles/hash_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/clean
+.PHONY : CMakeFiles/hash_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/trie_tests.dir
+
+# All Build rule for target.
+CMakeFiles/trie_tests.dir/all: CMakeFiles/trie.dir/all
+CMakeFiles/trie_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
+CMakeFiles/trie_tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=100 "Built target trie_tests"
+.PHONY : CMakeFiles/trie_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/trie_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 47
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/trie_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
+.PHONY : CMakeFiles/trie_tests.dir/rule
+
+# Convenience name for target.
+trie_tests: CMakeFiles/trie_tests.dir/rule
+.PHONY : trie_tests
+
+# clean rule for target.
+CMakeFiles/trie_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/clean
+.PHONY : CMakeFiles/trie_tests.dir/clean
+
+#=============================================================================
 # Target rules for target _deps/catch2-build/src/CMakeFiles/Catch2.dir
 
 # All Build rule for target.
 _deps/catch2-build/src/CMakeFiles/Catch2.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 "Built target Catch2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44 "Built target Catch2"
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/catch2-build/src/CMakeFiles/Catch2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/rule
@@ -451,12 +453,12 @@ _deps/catch2-build/src/CMakeFiles/Catch2.dir/clean:
 _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=44 "Built target Catch2WithMain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=45 "Built target Catch2WithMain"
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 45
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/rule
@@ -503,12 +505,12 @@ _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/clean:
 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/build.make _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/build.make _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=86,87,88,89,90,91,92,93,94,95,96,97 "Built target sfml-window"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=86,87,88,89,90,91,92,93,94,95,96,97,98 "Built target sfml-window"
 .PHONY : _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/rule
@@ -561,7 +563,7 @@ _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/sfml-
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/rule
@@ -615,7 +617,7 @@ _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all: _deps/sfml-build/src/SFML/
 
 # Build rule for subdir invocation for target.
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 34
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles 0
 .PHONY : _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/rule

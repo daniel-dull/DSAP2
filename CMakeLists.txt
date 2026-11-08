@@ -31,18 +31,6 @@ FetchContent_Declare(   #Fetches ImGui integration with SFML
 set(IMGUI_SFML_FIND_SFML OFF) #stops ImGui from looking for SFML in the file since its also being fetched
 FetchContent_MakeAvailable(ImGui-SFML)
 
-
-add_executable(hash_tests
-        src/hash/hash_tests.cpp
-        src/hash/hash.cpp
-)
-add_executable(trie_tests
-		src/trie/trietests.cpp
-    src/trie/trie.cpp
-)
-target_link_libraries(hash_tests PRIVATE Catch2::Catch2WithMain)
-target_link_libraries(trie_tests PRIVATE Catch2::Catch2WithMain)
-
 add_executable(DSAP2_UI
         src/main.cpp
         src/hash/hash.cpp
@@ -61,6 +49,21 @@ add_library(trie
 
 add_executable(dictionary_app
         src/main.cpp
+)
+
+add_executable(hash_tests
+        src/hash/hash_tests.cpp
+)
+add_executable(trie_tests
+		src/trie/trietests.cpp
+)
+
+target_link_libraries(hash_tests
+		PRIVATE hash_table Catch2::Catch2WithMain
+)
+
+target_link_libraries(trie_tests
+		PRIVATE trie Catch2::Catch2WithMain
 )
 
 target_link_libraries(dictionary_app

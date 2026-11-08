@@ -182,32 +182,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hash_tests
-
-# Build rule for target.
-hash_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hash_tests
-.PHONY : hash_tests
-
-# fast build rule for target.
-hash_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/build
-.PHONY : hash_tests/fast
-
-#=============================================================================
-# Target rules for targets named trie_tests
-
-# Build rule for target.
-trie_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 trie_tests
-.PHONY : trie_tests
-
-# fast build rule for target.
-trie_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/build
-.PHONY : trie_tests/fast
-
-#=============================================================================
 # Target rules for targets named DSAP2_UI
 
 # Build rule for target.
@@ -258,6 +232,32 @@ dictionary_app: cmake_check_build_system
 dictionary_app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dictionary_app.dir/build.make CMakeFiles/dictionary_app.dir/build
 .PHONY : dictionary_app/fast
+
+#=============================================================================
+# Target rules for targets named hash_tests
+
+# Build rule for target.
+hash_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hash_tests
+.PHONY : hash_tests
+
+# fast build rule for target.
+hash_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/build
+.PHONY : hash_tests/fast
+
+#=============================================================================
+# Target rules for targets named trie_tests
+
+# Build rule for target.
+trie_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 trie_tests
+.PHONY : trie_tests
+
+# fast build rule for target.
+trie_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/build
+.PHONY : trie_tests/fast
 
 #=============================================================================
 # Target rules for targets named Catch2
@@ -368,7 +368,6 @@ src/hash/hash.o: src/hash/hash.cpp.o
 
 # target to build an object file
 src/hash/hash.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/src/hash/hash.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/src/hash/hash.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table.dir/build.make CMakeFiles/hash_table.dir/src/hash/hash.cpp.o
 .PHONY : src/hash/hash.cpp.o
@@ -378,7 +377,6 @@ src/hash/hash.i: src/hash/hash.cpp.i
 
 # target to preprocess a source file
 src/hash/hash.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/src/hash/hash.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/src/hash/hash.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table.dir/build.make CMakeFiles/hash_table.dir/src/hash/hash.cpp.i
 .PHONY : src/hash/hash.cpp.i
@@ -388,7 +386,6 @@ src/hash/hash.s: src/hash/hash.cpp.s
 
 # target to generate assembly for a file
 src/hash/hash.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_tests.dir/build.make CMakeFiles/hash_tests.dir/src/hash/hash.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/src/hash/hash.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hash_table.dir/build.make CMakeFiles/hash_table.dir/src/hash/hash.cpp.s
 .PHONY : src/hash/hash.cpp.s
@@ -449,7 +446,6 @@ src/trie/trie.o: src/trie/trie.cpp.o
 
 # target to build an object file
 src/trie/trie.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/src/trie/trie.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/src/trie/trie.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie.dir/build.make CMakeFiles/trie.dir/src/trie/trie.cpp.o
 .PHONY : src/trie/trie.cpp.o
@@ -459,7 +455,6 @@ src/trie/trie.i: src/trie/trie.cpp.i
 
 # target to preprocess a source file
 src/trie/trie.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/src/trie/trie.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/src/trie/trie.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie.dir/build.make CMakeFiles/trie.dir/src/trie/trie.cpp.i
 .PHONY : src/trie/trie.cpp.i
@@ -469,7 +464,6 @@ src/trie/trie.s: src/trie/trie.cpp.s
 
 # target to generate assembly for a file
 src/trie/trie.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/src/trie/trie.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DSAP2_UI.dir/build.make CMakeFiles/DSAP2_UI.dir/src/trie/trie.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie.dir/build.make CMakeFiles/trie.dir/src/trie/trie.cpp.s
 .PHONY : src/trie/trie.cpp.s

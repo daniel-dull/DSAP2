@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/trie_tests.dir/src/trie/trie.cpp.o"
-  "CMakeFiles/trie_tests.dir/src/trie/trie.cpp.o.d"
   "CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o"
   "CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o.d"
   "trie_tests"
