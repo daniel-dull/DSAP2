@@ -24,6 +24,8 @@ using namespace std;
 // takes a node and a string, searches node's children for match to string's
 // first char, returns child node if found else returns null. 
 Node* searchChildren(string input,Node* root){
+	if(!root)
+		return nullptr;
 	for(auto i : root->next){
 		if(i->letter == input.at(0))
 			return i;
@@ -219,7 +221,10 @@ vector<string> Trie::FindNearest(string input){
 //	input = validate(input);
 	if(input.empty())
 		return {};
-	return FindNearestHelp(search(input),input,this->wordsToSuggest);
+	if(input == "-1")
+		return FindNearestHelp(root,"",this->wordsToSuggest);
+	else
+		return FindNearestHelp(search(input),input,this->wordsToSuggest);
 }
 
 // ###########################################################################

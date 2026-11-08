@@ -156,6 +156,19 @@ hash_tests/fast:
 .PHONY : hash_tests/fast
 
 #=============================================================================
+# Target rules for targets named trie_tests
+
+# Build rule for target.
+trie_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 trie_tests
+.PHONY : trie_tests
+
+# fast build rule for target.
+trie_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/build
+.PHONY : trie_tests/fast
+
+#=============================================================================
 # Target rules for targets named dictionary_app
 
 # Build rule for target.
@@ -264,6 +277,30 @@ src/trie/trie.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie.dir/build.make CMakeFiles/trie.dir/src/trie/trie.cpp.s
 .PHONY : src/trie/trie.cpp.s
 
+src/trie/trietests.o: src/trie/trietests.cpp.o
+.PHONY : src/trie/trietests.o
+
+# target to build an object file
+src/trie/trietests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o
+.PHONY : src/trie/trietests.cpp.o
+
+src/trie/trietests.i: src/trie/trietests.cpp.i
+.PHONY : src/trie/trietests.i
+
+# target to preprocess a source file
+src/trie/trietests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.i
+.PHONY : src/trie/trietests.cpp.i
+
+src/trie/trietests.s: src/trie/trietests.cpp.s
+.PHONY : src/trie/trietests.s
+
+# target to generate assembly for a file
+src/trie/trietests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trie_tests.dir/build.make CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.s
+.PHONY : src/trie/trietests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -276,6 +313,7 @@ help:
 	@echo "... hash_table"
 	@echo "... hash_tests"
 	@echo "... trie"
+	@echo "... trie_tests"
 	@echo "... src/hash/hash.o"
 	@echo "... src/hash/hash.i"
 	@echo "... src/hash/hash.s"
@@ -288,6 +326,9 @@ help:
 	@echo "... src/trie/trie.o"
 	@echo "... src/trie/trie.i"
 	@echo "... src/trie/trie.s"
+	@echo "... src/trie/trietests.o"
+	@echo "... src/trie/trietests.i"
+	@echo "... src/trie/trietests.s"
 .PHONY : help
 
 

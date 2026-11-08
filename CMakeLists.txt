@@ -16,9 +16,16 @@ add_library(trie
 add_executable(hash_tests
         src/hash/hash_tests.cpp
 )
+add_executable(trie_tests
+		src/trie/trietests.cpp
+)
 
 target_link_libraries(hash_tests
         PRIVATE hash_table Catch2::Catch2WithMain
+)
+
+target_link_libraries(trie_tests
+        PRIVATE trie Catch2::Catch2WithMain
 )
 
 add_executable(dictionary_app

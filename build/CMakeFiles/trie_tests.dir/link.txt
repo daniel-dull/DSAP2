@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/trie_tests.dir/src/trie/trietests.cpp.o -o trie_tests  libtrie.a /usr/local/lib/libCatch2Main.a /usr/local/lib/libCatch2.a 

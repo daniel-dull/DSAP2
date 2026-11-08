@@ -5,3 +5,4 @@ run:
 	./build/dictionary_app
 test:
 	./build/hash_tests
+	./build/trie_tests

@@ -51,5 +51,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/hash_table.dir/DependInfo.cmake"
   "CMakeFiles/trie.dir/DependInfo.cmake"
   "CMakeFiles/hash_tests.dir/DependInfo.cmake"
+  "CMakeFiles/trie_tests.dir/DependInfo.cmake"
   "CMakeFiles/dictionary_app.dir/DependInfo.cmake"
   )
