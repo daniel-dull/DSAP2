@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/comicalmayhem/Documents/PROJECTS/DSAP2/Catch2/src/catch2/.. -I/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2/generated-includes
+CXX_INCLUDES = 
 
 CXX_FLAGS = 
 

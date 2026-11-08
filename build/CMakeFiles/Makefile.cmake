@@ -8,42 +8,31 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/comicalmayhem/Documents/PROJECTS/DSAP2/CMakeLists.txt"
-  "/home/comicalmayhem/Documents/PROJECTS/DSAP2/Catch2/CMake/CatchConfigOptions.cmake"
-  "/home/comicalmayhem/Documents/PROJECTS/DSAP2/Catch2/CMake/CatchMiscFunctions.cmake"
-  "/home/comicalmayhem/Documents/PROJECTS/DSAP2/Catch2/CMakeLists.txt"
-  "/home/comicalmayhem/Documents/PROJECTS/DSAP2/Catch2/src/CMakeLists.txt"
-  "/home/comicalmayhem/Documents/PROJECTS/DSAP2/Catch2/src/catch2/catch_user_config.hpp.in"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "/usr/local/lib/cmake/Catch2/Catch2Config.cmake"
+  "/usr/local/lib/cmake/Catch2/Catch2ConfigVersion.cmake"
+  "/usr/local/lib/cmake/Catch2/Catch2Targets-noconfig.cmake"
+  "/usr/local/lib/cmake/Catch2/Catch2Targets.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
-  "/usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
-  "/usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
-  "/usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake"
-  "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake"
-  "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
-  "/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake"
-  "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake"
-  "/usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake"
-  "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake"
-  "/usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake"
   )
 
 # The corresponding makefile is:
@@ -55,9 +44,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Catch2/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Catch2/generated-includes/catch2/catch_user_config.hpp"
-  "Catch2/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -66,6 +52,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/trie.dir/DependInfo.cmake"
   "CMakeFiles/hash_tests.dir/DependInfo.cmake"
   "CMakeFiles/dictionary_app.dir/DependInfo.cmake"
-  "Catch2/src/CMakeFiles/Catch2.dir/DependInfo.cmake"
-  "Catch2/src/CMakeFiles/Catch2WithMain.dir/DependInfo.cmake"
   )

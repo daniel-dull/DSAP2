@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/hash_tests.dir/src/hash/hash_tests.cpp.o -o hash_tests  libhash_table.a Catch2/src/libCatch2Main.a Catch2/src/libCatch2.a 
+/usr/bin/c++ CMakeFiles/hash_tests.dir/src/hash/hash_tests.cpp.o -o hash_tests  libhash_table.a /usr/local/lib/libCatch2Main.a /usr/local/lib/libCatch2.a 

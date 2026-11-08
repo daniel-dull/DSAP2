@@ -466,6 +466,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Value Computed by CMake
 Catch2_BINARY_DIR:STATIC=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/Catch2
 
+//The directory containing a CMake configuration file for Catch2.
+Catch2_DIR:PATH=/usr/local/lib/cmake/Catch2
+
 //Value Computed by CMake
 Catch2_IS_TOP_LEVEL:STATIC=OFF
 
@@ -741,7 +744,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 project(DSAP2)
 
-add_subdirectory(Catch2)
+find_package(Catch2 3 REQUIRED)
 
 add_library(hash_table
         src/hash/hash.cpp

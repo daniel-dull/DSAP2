@@ -93,8 +93,8 @@ hash_tests_EXTERNAL_OBJECTS =
 hash_tests: CMakeFiles/hash_tests.dir/src/hash/hash_tests.cpp.o
 hash_tests: CMakeFiles/hash_tests.dir/build.make
 hash_tests: libhash_table.a
-hash_tests: Catch2/src/libCatch2Main.a
-hash_tests: Catch2/src/libCatch2.a
+hash_tests: /usr/local/lib/libCatch2Main.a
+hash_tests: /usr/local/lib/libCatch2.a
 hash_tests: CMakeFiles/hash_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/comicalmayhem/Documents/PROJECTS/DSAP2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hash_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hash_tests.dir/link.txt --verbose=$(VERBOSE)
