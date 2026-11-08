@@ -28,7 +28,7 @@ int main() {
     trie.setMaxReturn(0);
 
 
-    ifstream file("../assets/dictionary.txt");
+    ifstream file("assets/dictionary.txt");
 
     if (!file.is_open()) {
         cerr << "Could not open the dataset.\n";
