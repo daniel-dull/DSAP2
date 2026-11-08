@@ -9,7 +9,6 @@ using namespace std;
 //                                  STATIC HELPERS
 // ###########################################################################
 
-
 // takes a string input, checks if its all letters, dashes, or apostraphes,
 // then converts it all to lowercase.
 //string validate(string word){ 
