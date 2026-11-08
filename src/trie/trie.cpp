@@ -12,15 +12,15 @@ using namespace std;
 
 // takes a string input, checks if its all letters, dashes, or apostraphes,
 // then converts it all to lowercase.
-string validate(string word){ 
-	for(auto i : word){ // O(n) n= word.size(). can regexs improve this? prolly not, I think regexs can help with finding if it doesn't match a pattern but not for converting characters.
-		if( !( (i > 64 && i < 91) || (i > 96 && i < 123) || (i == 45) || (i == 49) ) ) //if char is not upper case letter and not lowercase letter and not - and not ' then return false
-			return "";
-		else
-			i = tolower(i); // else convert to lower 
-	}
-	return word;
-}
+//string validate(string word){ 
+//	for(auto i : word){ // O(n) n= word.size(). can regexs improve this? prolly not, I think regexs can help with finding if it doesn't match a pattern but not for converting characters.
+//		if( !( (i > 64 && i < 91) || (i > 96 && i < 123) || (i == 45) || (i == 49) ) ) //if char is not upper case letter and not lowercase letter and not - and not ' then return false
+//			return "";
+//		else
+//			i = tolower(i); // else convert to lower 
+//	}
+//	return word;
+//}
 
 // takes a node and a string, searches node's children for match to string's
 // first char, returns child node if found else returns null. 
@@ -56,7 +56,7 @@ void Trie::insertHelp(string word, Node* root){
 }
 
 bool Trie::insert(string word){
-	word = validate(word);
+//	word = validate(word);
 	if(word.empty())
 		return false;
 	insertHelp(word, this->root);
@@ -85,7 +85,7 @@ Node* Trie::searchHelp(string input, Node* root){
 }
 
 Node* Trie::search(string input){
-	input = validate(input);
+//	input = validate(input);
 	if(input.empty())
 		return nullptr;
 	return searchHelp(input, this->root);
@@ -217,7 +217,7 @@ vector<string> Trie::FindNearestHelp(Node* root,string input, int maxReturn){
 }
 
 vector<string> Trie::FindNearest(string input){
-	input = validate(input);
+//	input = validate(input);
 	if(input.empty())
 		return {};
 	return FindNearestHelp(search(input),input,this->wordsToSuggest);
