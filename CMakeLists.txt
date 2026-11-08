@@ -5,6 +5,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 include(FetchContent)
 
+FetchContent_Declare( #Fetches Catch2, so other fetches dont interfere with tests anymore
+        Catch2
+        URL https://github.com/catchorg/Catch2/archive/refs/tags/v3.5.0.zip
+)
+FetchContent_MakeAvailable(Catch2)
+
 FetchContent_Declare( #Fetches SFML lib
         SFML
         URL https://github.com/SFML/SFML/archive/refs/tags/2.6.1.zip
