@@ -2,6 +2,7 @@
 #include <vector>
 # ifndef TRIE_H
 # define TRIE_H
+using namespace std;
 
 
 struct Node{
