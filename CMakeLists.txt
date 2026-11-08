@@ -7,11 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(hash_table
         src/hash/hash.cpp
         src/hash/hash.h
+        src/main.cpp
+        src/main.cpp
 )
 
 add_library(trie
         src/trie/trie.cpp
         src/trie/trie.h
+        src/main.cpp
 )
 
 include(FetchContent)
@@ -27,6 +30,7 @@ FetchContent_MakeAvailable(Catch2)
 
 add_executable(hash_tests
         src/hash/hash_tests.cpp
+        src/main.cpp
 )
 
 target_link_libraries(hash_tests
