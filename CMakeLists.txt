@@ -11,6 +11,8 @@ FetchContent_Declare( #Fetches Catch2, so other fetches dont interfere with test
 )
 FetchContent_MakeAvailable(Catch2)
 
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+
 FetchContent_Declare( #Fetches SFML lib
         SFML
         URL https://github.com/SFML/SFML/archive/refs/tags/2.6.1.zip
