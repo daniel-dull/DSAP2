@@ -29,6 +29,94 @@ string normalizeWord(string word) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc > 1 && string(argv[1]) == "--console") {
+        HashTable hash;
+        Trie t; // Keeping your teammates' variable naming
+        t.setMaxReturn(0);
+
+        ifstream file("assets/dictionary.txt");
+        if (!file.is_open()) {
+            cerr << "Could not open the dataset.\n";
+            return 1;
+        }
+
+        string word;
+        size_t accepted = 0;
+
+        while (getline(file, word)) {
+            if (!word.empty() && word.back() == '\r') {
+                word.pop_back();
+            }
+
+            word = normalizeWord(word);
+
+            if (word.empty()) {
+                continue;
+            }
+
+            hash.insert(word);
+            t.insert(word);
+            accepted++;
+        }
+
+        file.close();
+        cout << "Loaded " << accepted << " accepted lines into both structures.\n";
+
+        while (true) {
+            cout << "\n1. Exact-word search\n"
+                 << "2. Prefix search\n"
+                 << "3. Exit\n"
+                 << "Choose: ";
+
+            string choice;
+            if (!getline(cin, choice) || choice == "3") {
+                break;
+            }
+
+            if (choice != "1" && choice != "2") {
+                cout << "Enter 1, 2, or 3.\n";
+                continue;
+            }
+
+            cout << "Enter a word or prefix: ";
+
+            string input;
+            if (!getline(cin, input)) {
+                break;
+            }
+
+            input = normalizeWord(input);
+
+            if (input.empty()) {
+                cout << "Enter letters, dashes, or apostrophes.\n";
+                continue;
+            }
+
+            if (choice == "1") {
+                bool hashFound = hash.search(input);
+
+                Node* node = t.search(input);
+                bool trieFound = node != nullptr && node->isWord;
+
+                cout << "Hash: " << (hashFound ? "Found" : "Not found") << '\n';
+                cout << "Trie: " << (trieFound ? "Found" : "Not found") << '\n';
+            } else {
+                auto hashMatches = hash.prefixSearch(input);
+                auto trieMatches = t.FindNearest(input);
+
+                cout << "\nHash: " << hashMatches.size() << " matches\n";
+                for (size_t i = 0; i < hashMatches.size() && i < 5; i++) {
+                    cout << hashMatches[i] << '\n';
+                }
+
+                cout << "\nTrie: " << trieMatches.size() << " matches\n";
+                for (size_t i = 0; i < trieMatches.size() && i < 5; i++) {
+                    cout << trieMatches[i] << '\n';
+                }
+            }
+        }
+        return 0;
+    }
     sf::RenderWindow window(sf::VideoMode(1280, 720), "DSAP2");
     window.setFramerateLimit(60);
 
@@ -61,8 +149,7 @@ int main(int argc, char* argv[]) {
     ifstream file("assets/dictionary.txt");
 
     if (!file.is_open()) {
-        cerr << "Could not open the dataset.\n";
-        return 1;
+        statusMessage = "Error: Could not open file";
     } else {
         string word;
         size_t accepted = 0;
@@ -130,94 +217,98 @@ int main(int argc, char* argv[]) {
                 string input(searchWordBuffer);
                 input = normalizeWord(input);
 
-                if (input.empty()) {
+                if (!input.empty()) {
                     auto startH = chrono::high_resolution_clock::now();
                     hashFound = hash.search(input);
                     auto hashMatches = hash.prefixSearch(input);
                     auto endH = chrono::high_resolution_clock::now();
                     hashSearchTimeUs = chrono::duration<double, micro>(endH - startH).count();
+
+                    hashSuggestions.clear();
+                    for (size_t i = 0; i < hashMatches.size() && i < 5; i++) {
+                        hashSuggestions.push_back(hashMatches[i]);
+                    }
+
+                    auto startT = chrono::high_resolution_clock::now();
+                    Node* node = trie.search(input);
+                    trieFound = (node != nullptr && node->isWord);
+                    auto trieMatches = trie.FindNearest(input);
+                    auto endT = chrono::high_resolution_clock::now();
+                    trieSearchTimeUs = chrono::duration<double, micro>(endT - startT).count();
+
+                    trieSuggestions.clear();
+                    for (size_t i = 0; i < trieMatches.size() && i < 5; i++) {
+                        trieSuggestions.push_back(trieMatches[i]);
+                    }
                 }
+            }
         }
 
-    string word;
-    size_t accepted = 0;
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
-    while (getline(file, word)) {
-        if (!word.empty() && word.back() == '\r') {
-            word.pop_back();
+        if (ImGui::BeginTable("PerformanceTable", 3, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg)) {
+            ImGui::TableSetupColumn("Metric");
+            ImGui::TableSetupColumn("Hash Table Result");
+            ImGui::TableSetupColumn("Trie Result");
+            ImGui::TableHeadersRow();
+
+            ImGui::TableNextRow();
+            ImGui::TableSetColumnIndex(0); ImGui::Text("Insertion Time (Est.)");
+            ImGui::TableSetColumnIndex(1); ImGui::Text("%.2f ms", hashInsertTimeMs);
+            ImGui::TableSetColumnIndex(2); ImGui::Text("%.2f ms", trieInsertTimeMs);
+
+            ImGui::TableNextRow();
+            ImGui::TableSetColumnIndex(0); ImGui::Text("Lookup Time");
+            ImGui::TableSetColumnIndex(1); ImGui::Text("%.2f us", hashSearchTimeUs);
+            ImGui::TableSetColumnIndex(2); ImGui::Text("%.2f us", trieSearchTimeUs);
+
+            ImGui::TableNextRow();
+            ImGui::TableSetColumnIndex(0); ImGui::Text("Exact Match Status");
+            ImGui::TableSetColumnIndex(1);
+            ImGui::TextColored(hashFound ? ImVec4(0,1,0,1) : ImVec4(1,0,0,1), hashFound ? "Found" : "Not Found");
+            ImGui::TableSetColumnIndex(2);
+            ImGui::TextColored(trieFound ? ImVec4(0,1,0,1) : ImVec4(1,0,0,1), trieFound ? "Found" : "Not Found");
+
+            ImGui::EndTable();
         }
 
-        word = normalizeWord(word);
+        ImGui::Dummy(ImVec2(0.0f, 15.0f));
 
-        if (word.empty()) {
-            continue;
+        if (ImGui::BeginTable("SuggestionsTable", 2, ImGuiTableFlags_Borders | ImGuiTableFlags_SizingStretchProp)) {
+            ImGui::TableSetupColumn("Hash Table Suggestions (Top 5)");
+            ImGui::TableSetupColumn("Trie Suggestions (Top 5)");
+            ImGui::TableHeadersRow();
+
+            ImGui::TableNextRow();
+
+            ImGui::TableSetColumnIndex(0);
+            if (hashSuggestions.empty()) {
+                ImGui::TextDisabled("No prefix matches found.");
+            } else {
+                for (const auto& w : hashSuggestions) {
+                    ImGui::BulletText("%s", w.c_str());
+                }
+            }
+
+            ImGui::TableSetColumnIndex(1);
+            if (trieSuggestions.empty()) {
+                ImGui::TextDisabled("No prefix matches found.");
+            } else {
+                for (const auto& w : trieSuggestions) {
+                    ImGui::BulletText("%s", w.c_str());
+                }
+            }
+
+            ImGui::EndTable();
         }
 
-        hash.insert(word);
-        trie.insert(word);
-        accepted++;
+        ImGui::End();
+
+        window.clear(sf::Color(30, 30, 30));
+        ImGui::SFML::Render(window);
+        window.display();
     }
 
-    cout << "Loaded " << accepted << " accepted lines into both structures.\n";
-
-    while (true) {
-        cout << "\n1. Exact-word search\n"
-             << "2. Prefix search\n"
-             << "3. Exit\n"
-             << "Choose: ";
-
-        string choice;
-        if (!getline(cin, choice) || choice == "3") {
-            break;
-        }
-
-        if (choice != "1" && choice != "2") {
-            cout << "Enter 1, 2, or 3.\n";
-            continue;
-        }
-
-        cout << "Enter a word or prefix: ";
-
-        string input;
-        if (!getline(cin, input)) {
-            break;
-        }
-
-        input = normalizeWord(input);
-
-        if (input.empty()) {
-            cout << "Enter letters, dashes, or apostrophes.\n";
-            continue;
-        }
-
-        if (choice == "1") {
-            bool hashFound = hash.search(input);
-
-            Node* node = trie.search(input);
-            bool trieFound = node != nullptr && node->isWord;
-
-            cout << "Hash: "
-                 << (hashFound ? "Found" : "Not found") << '\n';
-
-            cout << "Trie: "
-                 << (trieFound ? "Found" : "Not found") << '\n';
-        } else {
-            auto hashMatches = hash.prefixSearch(input);
-            auto trieMatches = trie.FindNearest(input);
-
-            cout << "\nHash: " << hashMatches.size() << " matches\n";
-
-            for (size_t i = 0; i < hashMatches.size() && i < 5; i++) {
-                cout << hashMatches[i] << '\n';
-            }
-
-            cout << "\nTrie: " << trieMatches.size() << " matches\n";
-
-            for (size_t i = 0; i < trieMatches.size() && i < 5; i++) {
-                cout << trieMatches[i] << '\n';
-            }
-        } // End the if/else
-    } // End menu loo
-
+    ImGui::SFML::Shutdown();
     return 0;
-} // Ends main
+}
