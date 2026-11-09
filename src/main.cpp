@@ -1,6 +1,13 @@
 #include <fstream>
 #include <iostream>
+#include <vector>
 #include <string>
+#include <chrono>
+#include <SFML/Graphics.hpp>
+
+#include "imgui.h"
+#include "imgui-SFML.h"
+
 #include "hash/hash.h"
 #include "trie/trie.h"
 
@@ -21,20 +28,116 @@ string normalizeWord(string word) {
     return word;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "DSAP2");
+    window.setFramerateLimit(60);
+
+    if (!ImGui::SFML::Init(window)) {
+        std::cerr << "Failed to initialize ImGui-SMFL." << std::endl;
+        return -1;
+    }
+
     HashTable hash;
     Trie trie;
 
-    trie.setMaxReturn(0);
+    char searchWordBuffer[256] = "";
+    std::string statusMessage = "Dataset not loaded.";
+    bool datasetLoaded = false;
 
+    double hashInsertTimeMs = 0.0;
+    double trieInsertTimeMs = 0.0;
+
+    double hashSearchTimeUs = 0.0;
+    double trieSearchTimeUs = 0.0;
+
+    bool hashFound = false;
+    bool trieFound = false;
+
+    vector<string> hashSuggestions;
+    vector<string> trieSuggestions;
+
+    trie.setMaxReturn(0);
 
     ifstream file("assets/dictionary.txt");
 
     if (!file.is_open()) {
         cerr << "Could not open the dataset.\n";
         return 1;
+    } else {
+        string word;
+        size_t accepted = 0;
+
+        auto startLoad = chrono::high_resolution_clock::now();
+        while (getline(file, word)) {
+            if (!word.empty() && word.back() =='r') {
+                word.pop_back();
+            }
+
+            word = normalizeWord(word);
+            if (word.empty()) {
+                continue;
+            }
+
+            hash.insert(word);
+            trie.insert(word);
+            accepted++;
+        }
+        auto endLoad = chrono::high_resolution_clock::now();
+        double totalLoadMs = chrono::duration<double, milli>(endLoad - startLoad).count();
+
+        hashInsertTimeMs = totalLoadMs / 2.0;
+        trieInsertTimeMs = totalLoadMs / 2.0;
+
+        file.close();
+        datasetLoaded = true;
+        statusMessage = "Loaded " + to_string(accepted) + "words into the Tables";
     }
 
+    sf::Clock deltaClock;
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            ImGui::SFML::ProcessEvent(window, event);
+
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+        }
+
+
+        ImGui::SFML::Update(window, deltaClock.restart());
+
+        ImGui::SetNextWindowPos(ImVec2(20,20), ImGuiCond_FirstUseEver);
+        ImGui::SetNextWindowSize(ImVec2(1240,680), ImGuiCond_FirstUseEver);
+
+        ImGui::Begin("DSA Project 2: Hash Table vs. Trie Performance Dashboard");
+
+        ImGui::Text("Dataset Status");
+        ImGui::Separator();
+        ImGui::TextColored(datasetLoaded ? ImVec4(0,1,0,1) : ImVec4(1,0,0,1), "%s", statusMessage.c_str());
+
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
+
+        ImGui::Text("Search & Suggestion Bar");
+        ImGui::Separator();
+
+        bool enterPressed = ImGui::InputText("Search Word / Prefix", searchWordBuffer, IM_ARRAYSIZE(searchWordBuffer), ImGuiInputTextFlags_EnterReturnsTrue);
+        ImGui::SameLine();
+
+        if (ImGui::Button("Run Search") || enterPressed) {
+            if (datasetLoaded) {
+                string input(searchWordBuffer);
+                input = normalizeWord(input);
+
+                if (input.empty()) {
+                    auto startH = chrono::high_resolution_clock::now();
+                    hashFound = hash.search(input);
+                    auto hashMatches = hash.prefixSearch(input);
+                    auto endH = chrono::high_resolution_clock::now();
+                    hashSearchTimeUs = chrono::duration<double, micro>(endH - startH).count();
+                }
+        }
 
     string word;
     size_t accepted = 0;
@@ -114,7 +217,7 @@ int main() {
                 cout << trieMatches[i] << '\n';
             }
         } // End the if/else
-    } // End menu loop
+    } // End menu loo
 
     return 0;
 } // Ends main
