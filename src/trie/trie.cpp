@@ -9,25 +9,26 @@ using namespace std;
 //                                  STATIC HELPERS
 // ###########################################################################
 
-
 // takes a string input, checks if its all letters, dashes, or apostraphes,
 // then converts it all to lowercase.
-string validate(string word){ 
-	for(auto i : word){ // O(n) n= word.size(). can regexs improve this? prolly not, I think regexs can help with finding if it doesn't match a pattern but not for converting characters.
-		if( !( (i > 64 && i < 91) || (i > 96 && i < 123) || (i == 45) || (i == 49) ) ) //if char is not upper case letter and not lowercase letter and not - and not ' then return false
-			return "";
-		else
-			i = tolower(i); // else convert to lower 
-	}
-	return word;
-}
+//string validate(string word){ 
+//	for(auto i : word){ // O(n) n= word.size(). can regexs improve this? prolly not, I think regexs can help with finding if it doesn't match a pattern but not for converting characters.
+//		if( !( (i > 64 && i < 91) || (i > 96 && i < 123) || (i == 45) || (i == 49) ) ) //if char is not upper case letter and not lowercase letter and not - and not ' then return false
+//			return "";
+//		else
+//			i = tolower(i); // else convert to lower 
+//	}
+//	return word;
+//}
 
 // takes a node and a string, searches node's children for match to string's
 // first char, returns child node if found else returns null. 
 Node* searchChildren(string input,Node* root){
+	if(!root)
+		return nullptr;
 	for(auto i : root->next){
 		if(i->letter == input.at(0))
-			return i
+			return i;
 	}
 	return nullptr;
 }
@@ -42,7 +43,7 @@ void Trie::insertHelp(string word, Node* root){
 	// if no node matches first letter of stored character, create one 
 	// in node's children vector and store the reference to it (c++ 17+ only).
 	if(!pulse)
-		pulse = root->next.emplace_back(new Node(word.at(0));
+		pulse = root->next.emplace_back(new Node(word.at(0)));
 		
 	// delete a character. if the string is now empty, that means pulse is 
 	// the end of the word, so mark it as such. 
@@ -56,7 +57,7 @@ void Trie::insertHelp(string word, Node* root){
 }
 
 bool Trie::insert(string word){
-	word = validate(word);
+//	word = validate(word);
 	if(word.empty())
 		return false;
 	insertHelp(word, this->root);
@@ -81,14 +82,14 @@ Node* Trie::searchHelp(string input, Node* root){
 	if(input.empty() || !pulse)
 		return pulse;
 	else
-		return searchHelper(input,pulse);
+		return searchHelp(input,pulse);
 }
 
 Node* Trie::search(string input){
-	input = validate(input);
+//	input = validate(input);
 	if(input.empty())
 		return nullptr;
-	return searchHelper(input, this->root);
+	return searchHelp(input, this->root);
 }
 
 // ###########################################################################
@@ -120,14 +121,14 @@ void Trie::DFSOrderHelp(Node* root, string &output, vector<string> &ret){
 	// if the node's letter is not a null terminator
 	// (should only apply to the root), then append it to the output string.
 	if(root->letter != '\0')
-		ouput += root->letter;
+		output += root->letter;
 	// if the node is a word, push everything in output to vector 
 	if(root->isWord)
 		ret.push_back(output);
 	// if there are children, recursively call this function on all children. 
 	if(!root->next.empty()){
-		for(auto i : next)
-			printAllWordsHelp(i,output,ret);
+		for(auto i : root->next)
+			DFSOrderHelp(i,output,ret);
 	}
 	// remove the last letter. 
 	output.pop_back();
@@ -140,7 +141,7 @@ void Trie::DFSOrderHelp(Node* root, string &output, vector<string> &ret){
 vector<string> Trie::getDFSOrder(){
 	string output = "";
 	vector<string> ret;
-	printAllWordsHelp(this->root,output,ret);
+	DFSOrderHelp(this->root,output,ret);
 	return ret;
 }
 
@@ -160,7 +161,7 @@ vector<vector<char>> Trie::levelOrderHelp(Node* root){
 	int level = 0;
 	
 	while(!q.empty()){
-		int count = q.siz();
+		int count = q.size();
 		result.push_back({});
 		
 		for(int i = 0;i<count;i++){
@@ -171,9 +172,10 @@ vector<vector<char>> Trie::levelOrderHelp(Node* root){
 		}
 		level++;
 	}
+	return result;
 }
 
-void Trie::getLevelOrder(){
+vector<vector<char>> Trie::getLevelOrder(){
 	return levelOrderHelp(this->root);
 //	int level = 0;
 //	for(auto i : result){
@@ -193,16 +195,15 @@ void Trie::getLevelOrder(){
 // does a breadth first search to find the nearest n words.
 // n default == 5, can be adjusted. q pairs nodes to running string along that
 // branch. will return all words BFS order if maxReturn <= 0.
-vector<string> Trie::FindNearestHelp(Node* root,string &input, int maxReturn){
+vector<string> Trie::FindNearestHelp(Node* root,string input, int maxReturn){
 	if(!root)
 		return {};
 	queue<pair<Node*,string>> q;
-	string s(1,root->letter);
-	q.push({root,s);
+	q.push({root,input});
 	vector<string> ret;
 	while(!q.empty()){ 
-		if(q.front().first->isWord())
-			ret.push_back(q.front.second);
+		if(q.front().first->isWord)
+			ret.push_back(q.front().second);
 		if(maxReturn > 0)
 			if(ret.size() == maxReturn)
 				return ret;
@@ -212,14 +213,18 @@ vector<string> Trie::FindNearestHelp(Node* root,string &input, int maxReturn){
 			q.push({i,temp});
 		}
 		q.pop();
-	} 
+	}
+	return ret;
 }
 
 vector<string> Trie::FindNearest(string input){
-	input = validate(input);
+//	input = validate(input);
 	if(input.empty())
 		return {};
-	return FindNearestHelp(search(input),input,this->wordsToSuggest);
+	if(input == "-1")
+		return FindNearestHelp(root,"",this->wordsToSuggest);
+	else
+		return FindNearestHelp(search(input),input,this->wordsToSuggest);
 }
 
 // ###########################################################################
